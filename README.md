@@ -48,6 +48,8 @@ Then configure the rules you want to use under the rules section.
 
 <!-- begin auto-generated rules list -->
 
-TODO: Run eslint-doc-generator to generate the rules list.
+| Name                                                           | Description                                                   |
+| :------------------------------------------------------------- | :------------------------------------------------------------ |
+| [separation-of-concerns](docs/rules/separation-of-concerns.md) | rule to warn mixing of business logic with presentation logic |
 
 <!-- end auto-generated rules list -->
