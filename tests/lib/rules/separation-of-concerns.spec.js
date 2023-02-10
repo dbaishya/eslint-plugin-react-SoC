@@ -1,6 +1,6 @@
 // separation-of-concerns.spec.js
 const RuleTester = require('eslint').RuleTester
-const ensureSeparationOfConcerns = require('../../../lib/rules/separation-of-concerns')
+const separationOfConcerns = require('../../../lib/rules/separation-of-concerns')
 const ruleTester = new RuleTester({
   // eslint-disable-next-line node/no-unpublished-require
   parser: require.resolve('@babel/eslint-parser'),
@@ -10,7 +10,7 @@ const ruleTester = new RuleTester({
   },
 })
 
-ruleTester.run('ensure-separation-of-concerns', ensureSeparationOfConcerns, {
+ruleTester.run('separation-of-concerns', separationOfConcerns, {
   invalid: [
     {
       code: `
