@@ -15,7 +15,7 @@
   "exports": "./lib/index.js",
   "scripts": {
     "__development__": "-----------------------------------------------------",
-    "build": "ncc build",
+    "clean": "rm -rf node_modules dist",
     "lint": "npm-run-all \"lint:*\"",
     "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
     "lint:js": "eslint .",
@@ -32,7 +32,6 @@
     "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
-    "@vercel/ncc": "^0.36.1",
     "eslint": "^8.19.0",
     "eslint-doc-generator": "^1.0.0",
     "eslint-plugin-eslint-plugin": "^5.0.0",
@@ -41,10 +40,10 @@
     "npm-run-all": "^4.1.5"
   },
   "engines": {
-    "node": "^16.0.0 || >= 18.0.0"
+    "node": ">=14"
   },
   "peerDependencies": {
     "eslint": ">=7"
   },
-  "license": "ISC"
+  "license": "MIT"
 }
