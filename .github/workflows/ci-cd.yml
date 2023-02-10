@@ -3,47 +3,66 @@ name: ci + cd
 on:
   push:
     branches:
-    - '**'
+      - '**'
 
 jobs:
   lint:
     name: lint changeset
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 14
-    - name: npm install and lint
-      run: |
-        npm install
-        npm run lint
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v23
+        with:
+          node-version: 16.x
+      - name: npm install and lint
+        run: |
+          npm install
+          npm run lint
 
   test:
     name: test changeset
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 14
-    - name: npm install and test
-      run: |
-        npm install
-        npm run test
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: npm install and test
+        run: |
+          npm install
+          npm run test
+
+  build:
+    name: build package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: npm install and build
+        run: |
+          npm install
+          npm run build
+      - name: archive build artifacts
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifacts@v3
+        with:
+          name: build
+          path: dist/
 
   publish:
     name: publish build
     runs-on: ubuntu-latest
-    needs: [lint, test]
+    needs: [lint, test, build]
     if: github.ref == 'refs/heads/master'
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 14
-    - name: npm publish
-      run: |
-        npm publish
-
-
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifacts@v3
+        with:
+          name: build
+          path: dist/
+      - uses: actions/setup-node@v3
+      - name: npm publish
+        run: |
+          npm run publish
