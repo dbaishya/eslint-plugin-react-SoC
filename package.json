@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-soc",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An eslint plugin that ensures separation of business logic from presentation logic in React functional components.",
   "keywords": [
     "design patters",
