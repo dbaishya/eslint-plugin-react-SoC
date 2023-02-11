@@ -1,0 +1,40 @@
+.subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  position: relative;
+  padding: 32px;
+  background-color: #fafafa;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 300;
+  color: #222;
+}
+
+.subscribe::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 8px 0 -3px #f6f6f6,
+    0 9px 1px -3px rgb(0 0 0 / 20%), 0 16px 0 -6px #f6f6f6,
+    0 17px 2px -6px rgb(0 0 0 / 20%);
+}
+
+.subscribe > input {
+  padding: 8px;
+  flex-grow: 1;
+  appearance: none;
+  border: none;
+  font-size: 24px;
+}
+
+.subscribe > input[type='submit'] {
+  border-radius: 8px;
+  color: #cc9a9a;
+  transition: color 0.2s ease-out;
+}
