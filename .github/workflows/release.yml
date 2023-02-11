@@ -46,8 +46,8 @@ jobs:
       - name: configure npm registry as publish target
         uses: actions/setup-node@v3
         with:
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: 'https://registry.npmjs.org'
       - name: publish to npm registry
         run: npm run publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PUBLISH_GPR_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

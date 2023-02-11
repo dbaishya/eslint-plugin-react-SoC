@@ -39,7 +39,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "react-soc/separation-of-concerns": "warn"
+    "react-soc/separation-of-concerns": "error"
   }
 }
 ```
