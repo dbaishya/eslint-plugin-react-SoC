@@ -1,0 +1,6 @@
+# .npmignore
+.github/
+docs/
+example/
+node_modules/
+tests/

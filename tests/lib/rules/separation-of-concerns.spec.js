@@ -17,7 +17,7 @@ ruleTester.run('separation-of-concerns', separationOfConcerns, {
       const Subscribe = ({ onSubmit = (email = '') => null, onLoad = () => null }) => {
         const [email, setEmail] = useState('')
 
-        useState(() => {
+        useEffect(() => {
           onLoad()
           sendLoadEvent()
         }, [onLoad])
@@ -69,7 +69,7 @@ ruleTester.run('separation-of-concerns', separationOfConcerns, {
           event.preventDefault()
           const { target: {value} } = event
           setEmail(() => value)
-        }, [onSubmit])
+        }, [])
 
         const handleOnSubmit = (event) => {
           event.preventDefault()
