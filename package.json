@@ -25,7 +25,7 @@
     "update:eslint-docs": "eslint-doc-generator",
     "__production__": "-----------------------------------------------------",
     "version": "npm version patch --no-git-tag-version",
-    "prepublish": "npm version patch"
+    "prepublishOnly": "npm version patch"
   },
   "dependencies": {
     "requireindex": "^1.2.0"
