@@ -1,14 +1,16 @@
 {
   "name": "eslint-plugin-react-soc",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "An eslint plugin that ensures separation of business logic from presentation logic in React functional components.",
   "keywords": [
     "design patters",
+    "separation of concerns",
+    "presentation",
+    "business logic",
     "eslint",
     "eslint plugin",
     "react",
-    "react hooks",
-    "separation of concerns"
+    "react hooks"
   ],
   "author": "Dhruba Baishya",
   "main": "./lib/index.js",
@@ -22,8 +24,9 @@
     "test": "mocha tests --recursive",
     "update:eslint-docs": "eslint-doc-generator",
     "__production__": "-----------------------------------------------------",
-    "version": "npm version patch --no-git-tag-version",
-    "publish": "npm publish --access public"
+    "preversion": "npm test",
+    "postversion": "npm publish --tag=next",
+    "postpublish": "git push origin --all; git push origin --tags"
   },
   "dependencies": {
     "requireindex": "^1.2.0"
