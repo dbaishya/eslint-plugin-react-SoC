@@ -24,8 +24,9 @@
     "test": "mocha tests --recursive",
     "update:eslint-docs": "eslint-doc-generator",
     "__production__": "-----------------------------------------------------",
-    "version": "npm version patch --no-git-tag-version",
-    "prepublishOnly": "npm version patch"
+    "preversion": "npm test",
+    "postversion": "npm publish --tag=next",
+    "postpublish": "git push origin --all; git push origin --tags"
   },
   "dependencies": {
     "requireindex": "^1.2.0"
