@@ -23,10 +23,7 @@
     "lint:js": "eslint lib --ext .js --ignore-pattern 'example/*'",
     "test": "mocha tests --recursive",
     "update:eslint-docs": "eslint-doc-generator",
-    "__production__": "-----------------------------------------------------",
-    "preversion": "npm test",
-    "postversion": "npm publish --tag=next",
-    "postpublish": "git push origin --all; git push origin --tags"
+    "__production__": "-----------------------------------------------------"
   },
   "dependencies": {
     "requireindex": "^1.2.0"
