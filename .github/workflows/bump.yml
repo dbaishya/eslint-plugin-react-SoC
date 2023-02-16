@@ -12,10 +12,10 @@ jobs:
     if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
     steps:
       - uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
       - run: npm version patch -m "[RELEASE] %s"
       - run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-      - run: git push
+          git add .
+          git commit -m "chore: bumping pkg verion"
+          git push
