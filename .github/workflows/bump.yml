@@ -15,4 +15,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - run: npm version patch -m "[RELEASE] %s"
+      - name: Run a one-line script
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
       - run: git push
