@@ -18,7 +18,4 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
       - run: npm version patch -m "[RELEASE] %s"
-      - run: |
-          git add .
-          git commit -m "chore: bumping npm pkg verion to %s"
-          git push
+      - run: git push
