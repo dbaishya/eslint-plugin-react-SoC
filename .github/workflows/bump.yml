@@ -10,7 +10,7 @@ jobs:
     permissions: write-all
     name: Bumping pkg version
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
+    if: "!startsWith(github.event.head_commit.message, '[bump:pkg]')"
     steps:
       - uses: actions/checkout@v3
         with:
@@ -18,5 +18,5 @@ jobs:
       - run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-      - run: npm version patch -m "[RELEASE] %s"
+      - run: npm version patch -m "[bump:pkg] %s"
       - run: git push
