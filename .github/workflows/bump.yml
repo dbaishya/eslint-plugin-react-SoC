@@ -7,8 +7,7 @@ on:
 
 jobs:
   version:
-    permissions:
-      pull-requests: write
+    permissions: write-all
     name: Bumping pkg version
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
