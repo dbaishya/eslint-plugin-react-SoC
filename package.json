@@ -14,7 +14,8 @@
     "react",
     "react hooks"
   ],
-  "author": "Dhruba Baishya",
+  "author": "Dhruba Baishya <https://github.com/dbaishya>",
+  "repository": "dbaishya/eslint-plugin-react-SoC",
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "scripts": {

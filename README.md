@@ -1,3 +1,8 @@
+![npm](https://img.shields.io/npm/v/eslint-plugin-react-soc)
+![npm](https://img.shields.io/npm/dw/eslint-plugin-react-soc)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/dbaishya/eslint-plugin-react-SoC/ci.yml)
+![NPM](https://img.shields.io/npm/l/eslint-plugin-react-soc)
+
 # eslint-plugin-react-soc
 
 An eslint plugin that ensures separation of business logic from presentation logic in React functional components.
