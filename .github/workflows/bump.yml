@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   version:
+    permissions: write-all
     name: Bumping pkg version
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
