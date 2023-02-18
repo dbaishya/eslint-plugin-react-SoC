@@ -5,12 +5,10 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pull-requests: write
-
 jobs:
   version:
+    permissions:
+      pull-requests: write
     name: Bumping pkg version
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
